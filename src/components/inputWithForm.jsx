@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Toaster from "./succes";
 export default function InputForm() {
   const [task, setTask] = useState([]);
   const [newTask, setNewTask] = useState({ task: "", date: "" });
@@ -25,6 +26,7 @@ export default function InputForm() {
   function removeTask(index) {
     const uppdatedTasks = task.filter((_, i) => i !== index);
     setTask(uppdatedTasks);
+    Toaster(true)
   }
   const getTaskStyle = (task) => {
     const today = new Date();

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./navbar.css"
 export default function Navbar() {
   const links = [
     {to:"/", name : "Home"},
@@ -11,10 +12,10 @@ export default function Navbar() {
   return (
     <header className="header">
       <nav className="navigation">
-        <ul>
+        <ul className="navlist">
           {links.map((adress, index) => (
             <li key={index}>
-              <Link to={adress.to}>{adress.name}</Link>
+              <Link className="link" to={adress.to}>{adress.name}</Link>
             </li>
           ))}
         </ul>
